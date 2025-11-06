@@ -23,11 +23,11 @@ export default function GiftSection() {
     return () => observer.disconnect();
   }, []);
 
-  const copyToClipboard = (text, type) => {
-    navigator.clipboard.writeText(text);
-    setCopiedAccount(type);
-    setTimeout(() => setCopiedAccount(''), 2000);
-  };
+  // const copyToClipboard = (text, type) => {
+  //   navigator.clipboard.writeText(text);
+  //   setCopiedAccount(type);
+  //   setTimeout(() => setCopiedAccount(''), 2000);
+  // };
 
   return (
     <section ref={sectionRef} className="py-20 px-4 bg-gradient-to-b from-white to-rose-50">
