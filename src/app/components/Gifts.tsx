@@ -39,7 +39,7 @@ export default function GiftSection() {
             </div>
           </div>
           <p className="text-sm tracking-[0.3em] uppercase text-rose-500 mb-4">Mesa de Regalos</p>
-          <h3 className="text-4xl md:text-5xl font-serif mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h3 className="text-4xl text-gray-800 md:text-5xl font-serif mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
             Tu Presencia es Nuestro Mayor Regalo
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -57,7 +57,7 @@ export default function GiftSection() {
               <div className="bg-gradient-to-br from-red-500 to-rose-600 rounded-full p-3">
                 <Home className="w-6 h-6 text-white" />
               </div>
-              <h4 className="text-xl font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h4 className="text-xl text-gray-800 font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Liverpool
               </h4>
             </div>
@@ -79,7 +79,7 @@ export default function GiftSection() {
               <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full p-3">
                 <Gift className="w-6 h-6 text-white" />
               </div>
-              <h4 className="text-xl font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h4 className="text-xl text-gray-800 font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Amazon
               </h4>
             </div>
@@ -104,7 +104,7 @@ export default function GiftSection() {
                 <CreditCard className="w-6 h-6 text-white" />
               </div>
             </div>
-            <h4 className="text-2xl font-serif mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h4 className="text-2xl text-gray-800 font-serif mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
               También puedes hacer un regalo en efectivo si lo deseas.
             </h4>
           </div>          
