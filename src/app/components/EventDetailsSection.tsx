@@ -10,6 +10,8 @@ export default function EventDetailsSection() {
 
   const eventDate = new Date('2025-12-15T19:00:00');
 
+  //prueba
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -135,7 +137,7 @@ export default function EventDetailsSection() {
         <div className={`mt-12 text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h4 className="text-2xl font-serif mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Código de Vestimenta.
+              Código de Vestimenta
             </h4>
             <p className="text-3xl font-light tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Formal • Elegante
