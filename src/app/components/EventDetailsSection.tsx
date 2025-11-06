@@ -65,6 +65,7 @@ export default function EventDetailsSection() {
             Nos vemos en
           </h3>
           
+          {/* El grid del contador es naturalmente responsivo */}
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
             {[
               { label: 'Días', value: countdown.days },
@@ -72,11 +73,11 @@ export default function EventDetailsSection() {
               { label: 'Minutos', value: countdown.minutes },
               { label: 'Segundos', value: countdown.seconds }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-md rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <div key={idx} className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-6 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                   {item.value}
                 </div>
-                <div className="text-xs tracking-wider uppercase opacity-80">
+                <div className="text-[10px] sm:text-xs tracking-wider uppercase opacity-80">
                   {item.label}
                 </div>
               </div>
@@ -87,44 +88,47 @@ export default function EventDetailsSection() {
         {/* Event Cards */}
         <div className={`grid md:grid-cols-1 gap-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
-          {/* Reception */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 text-gray-800 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 max-w-2xl mx-auto">
-  <div className="flex items-center justify-between gap-6">
-    {/* Icono y título */}
-    <div className="flex items-center gap-3">
-      <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-full p-3 shadow-lg">
-        <Music className="w-6 h-6 text-white" />
-      </div>
-      <div>
-        <h4 className="text-xl font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Recepción
-        </h4>
-        <p className="text-xs text-gray-500 tracking-wider">FIESTA Y CELEBRACIÓN</p>
-      </div>
-    </div>
+          {/* Reception Card - Mejorado para responsividad */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 text-gray-800 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 max-w-2xl mx-auto w-full">
+            
+            {/* Contenedor principal: Flex en desktop, Grid en mobile */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"> 
+              
+              {/* Bloque 1: Icono y Título */}
+              <div className="flex items-center gap-3">
+                <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-full p-3 shadow-lg flex-shrink-0">
+                  <Music className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-serif" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    Recepción
+                  </h4>
+                  <p className="text-xs text-gray-500 tracking-wider">FIESTA Y CELEBRACIÓN</p>
+                </div>
+              </div>
 
-    {/* Info en línea */}
-    <div className="flex gap-6 text-sm text-gray-600">
-      <div className="flex items-center gap-2">
-        <Clock className="w-4 h-4 text-purple-500" />
-        <span className="font-medium">8:30 PM</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <MapPin className="w-4 h-4 text-purple-500" />
-        <span className="font-medium">Salón Los Jardines</span>
-      </div>
-    </div>
+              {/* Bloque 2: Info (Hora y Lugar) - Se apila verticalmente en mobile si es necesario */}
+              <div className="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 text-sm text-gray-600 sm:order-none order-3"> 
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <Clock className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                  <span className="font-medium">8:30 PM</span>
+                </div>
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <MapPin className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                  <span className="font-medium">Salón Los Jardines</span>
+                </div>
+              </div>
 
-    {/* Botón compacto */}
-    <button 
-      onClick={() => window.open('https://maps.google.com', '_blank')}
-      className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
-    >
-      <MapPin className="w-4 h-4" />
-      <span className="text-xs tracking-wider font-medium">VER MAPA</span>
-    </button>
-  </div>
-</div>
+              {/* Bloque 3: Botón - Se ajusta al 100% del ancho en mobile (w-full) */}
+              <button 
+                onClick={() => window.open('https://maps.google.com', '_blank')}
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center sm:justify-start gap-2 whitespace-nowrap w-full sm:w-auto mt-2 sm:mt-0"
+              >
+                <MapPin className="w-4 h-4" />
+                <span className="text-xs tracking-wider font-medium">VER MAPA</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Dress Code */}
