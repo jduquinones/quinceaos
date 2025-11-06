@@ -26,7 +26,7 @@ export default function StorySection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-gradient-to-b from-white to-rose-50/30">
+    <section ref={sectionRef} className="py-20 px-4 bg-gradient-to-b from-white to-rose-50">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}
